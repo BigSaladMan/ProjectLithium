@@ -1,0 +1,56 @@
+#!/usr/bin/bash
+
+# Author: Sangeethan Thaventhiran
+# Description: Tool used to manage imports from z0ne Library, create .gitignore and setup proper directory layout
+# Version: 1.0
+# Changes: [N/A]
+
+# Make the proper directory in the project folder
+while true; do
+    case "$1" in
+    --unity)
+        # Clone the z0ne Library Repo
+        git clone https://github.com/thez0ne/z0neLibrary.git && echo "Library Cloned!"
+
+        # Create the .gitignore from the curl
+        curl -k https://www.toptal.com/developers/gitignore/api/unity,visualstudio,visualstudiocode -o .gitignore && echo ".gitignore Created!"
+
+        # Change directory into Assets
+        mkdir -p Assets
+        cd Assets/
+
+        # Create template folder layout
+        mkdir Animation
+        mkdir Audio
+        mkdir Editor
+        mkdir Fonts
+        mkdir Materials
+        mkdir Models
+        mkdir Plugins
+        mkdir ScriptableObjects
+        mkdir Scripts
+        mkdir Shaders
+        mkdir Sprites
+        mkdir Textures
+        mkdir ThirdParty
+
+        echo "Directories Created!"
+
+        # Change Directory to src
+        cd ..
+
+        # Move the template files into their appropriate locations
+        mv -v z0neLibrary/Unity/Scripts/* Assets/Scripts/
+
+        # Delete the z0neLibrary folder
+        rm -rf z0neLibrary && echo "Library Repo Deleted!"
+
+        # Exit the script
+        exit 1
+        ;;
+
+    esac
+
+    echo Nothing :pepehands:
+    exit 1
+done
