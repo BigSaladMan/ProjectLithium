@@ -16,9 +16,22 @@ public class MainMenu : MonoBehaviour
         //SceneManager.LoadScene();
     }
 
-    public void ShowMain() => menuManager.OpenMenu("main");
+    public void ShowMain() 
+    {
+        menuManager.CloseMenu("credits");
+        menuManager.OpenMenu("main");
+    } 
     
-    public void ShowCredit() => menuManager.OpenMenu("credits");
+    public void ShowCredit()
+    {
+        menuManager.CloseMenu("main");
+        menuManager.OpenMenu("credits");
+    }
+
+    public void ShowPlanetGenerator()
+    {
+        Application.OpenURL("https://deep-fold.itch.io/pixel-planet-generator");
+    }
     
 
     public void ShowQuit()
