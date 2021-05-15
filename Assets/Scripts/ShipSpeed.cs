@@ -46,11 +46,12 @@ public class ShipSpeed: MonoBehaviour
         if (x != 0 && y != 0 && magnitude >= maxSpeed)
             return;
 
-        float multipliyer = 1f;
+        
+        float multiplier = 1f;
         if (magnitude > 20f)
-            multipliyer = 2f;
+            multiplier = 2f;
 
-        rb.AddForce(transform.forward * y * shipAccel * Time.deltaTime * multipliyer);
+        rb.AddForce(transform.forward * y * shipAccel * Time.deltaTime * multiplier);
         
 
         // //up
