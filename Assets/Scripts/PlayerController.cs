@@ -7,12 +7,13 @@ public class PlayerController: MonoBehaviour
 
     [SerializeField] private float shipAccel = 7f;
     [SerializeField] private float maxSpeed = 20f;
+    [SerializeField] private float rotationSpeed = 1.0f;
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        rb.useGravity = false;
     }
 
     // Update is called once per frame
@@ -21,9 +22,9 @@ public class PlayerController: MonoBehaviour
         Move();
         // //capped speed
         // rb.velocity = Vector3.ClampMagnitude(rb.velocity, 25f);
-
+        // TODO might n eed more friction && might wanna move this somewhere else
         //friction (20% of speed)
-        rb.AddForce(-rb.velocity.x/5f, 0f, -rb.velocity.z/5f);
+        rb.AddForce(-rb.velocity.x/2f, 0f, -rb.velocity.z/2f);
     }
 
     void Move()
@@ -40,6 +41,7 @@ public class PlayerController: MonoBehaviour
         float magnitude = rb.velocity.magnitude;
 
         // clamping to max speed
+        // TODO make sure check if this works
         if (x != 0 && y != 0 && magnitude >= maxSpeed)
             return;
 
@@ -49,44 +51,7 @@ public class PlayerController: MonoBehaviour
             multiplier = 2f;
 
         rb.AddForce(transform.forward * y * shipAccel * Time.deltaTime * multiplier);
-        
-
-        // //up
-        // if (Input.GetAxis("Vertical") > 0f)
-        // {
-        //     if (rb.velocity.magnitude > 20f)
-        //     {
-        //         rb.AddForce(0f, 0f, 2 * shipAccel);
-        //     }
-        //     rb.AddForce(0f, 0f, shipAccel);
-        // }
-        // //down
-        // if (Input.GetAxis("Vertical") < 0f)
-        // {
-        //     if (rb.velocity.magnitude > 20f)
-        //     {
-        //         rb.AddForce(0f, 0f, -2 * shipAccel);
-        //     }
-        //     rb.AddForce(0f, 0f, -shipAccel);
-        // }
-        //right
-        if (Input.GetAxis("Horizontal") > 0f)
-        {
-            if (rb.velocity.magnitude > 20f)
-            {
-                rb.AddForce(2 * shipAccel, 0f, 0f);
-            }
-            rb.AddForce(shipAccel, 0f, 0f);
-        }
-        //left
-        if (Input.GetAxis("Horizontal") < 0f)
-        {
-            if (rb.velocity.magnitude > 20f)
-            {
-                rb.AddForce(-2 * shipAccel, 0f, 0f);
-            }
-            rb.AddForce(-shipAccel, 0f, 0f);
-        }
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + (x * rotationSpeed), transform.rotation.eulerAngles.z);
     }
 
     private void CounterForce()
