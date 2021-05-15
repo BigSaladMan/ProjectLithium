@@ -4,10 +4,13 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     private MenuManager menuManager;
+    [SerializeField] private GameObject menuPlanet;
+    [SerializeField] private GameObject creditPlanet;
 
     private void Start() 
     {
         menuManager = MenuManager.instance;    
+        creditPlanet.SetActive(false);
     }
 
     public void ShowGame()
@@ -19,12 +22,16 @@ public class MainMenu : MonoBehaviour
     {
         menuManager.CloseMenu("credits");
         menuManager.OpenMenu("main");
+        menuPlanet.SetActive(true);
+        creditPlanet.SetActive(false);
     } 
     
     public void ShowCredit()
     {
         menuManager.CloseMenu("main");
         menuManager.OpenMenu("credits");
+        menuPlanet.SetActive(false);
+        creditPlanet.SetActive(true);
     }
 
     public void ShowPlanetGenerator()
