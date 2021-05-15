@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Zone.Core.Utils;
 
-public class MenuManager : MonoBehaviour
+public class MenuManager : Singleton<MenuManager>
 {
     // Start is called before the first frame update
     void Start()
@@ -18,15 +19,18 @@ public class MenuManager : MonoBehaviour
     }
 
 
-    public void play(){
-        SceneManager.LoadScene();
+    public void PlayGame()
+    {
+        //SceneManager.LoadScene();
     }
 
     public void Credit()
     {
-        SceneManager.LoadScene();
+        //SceneManager.LoadScene();
     }
-    public void Quit()
+    public void QuitGame()
     {
-        SceneManager.LoadScene();
+        // TODO spawn error console to yell at player to alt+f4
     }   
+
+}
