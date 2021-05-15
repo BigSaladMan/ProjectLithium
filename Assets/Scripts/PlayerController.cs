@@ -62,4 +62,15 @@ public class PlayerController: MonoBehaviour
             rb.AddForce(-rb.velocity.x, 0f, -rb.velocity.z);
         }
     }
+
+    //toDo class of enemy hit to be added
+    public void Shoot(Vector3 shootPosition, Vector3 shootDirection)
+    {
+        //hit
+        if(Physics.Raycast(shootPosition, shootDirection))
+        {
+            
+        }
+       
+    }
 }
