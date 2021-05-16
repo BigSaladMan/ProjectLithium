@@ -12,10 +12,14 @@ public class GameManager : Singleton<GameManager>, IDamageable
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text healthText;
 
-    private void Update() 
+    private void Update()
     {
-        scoreText.text = $"Score: {score}";    
-        healthText.text = $"Health: {health}";    
+        if (SceneManager.GetActiveScene().name == "GameScene")
+        {
+            scoreText.text = $"Score: {score}";    
+            healthText.text = $"Health: {health}";    
+        }
+            
     }
 
     public void TakeDamage()
