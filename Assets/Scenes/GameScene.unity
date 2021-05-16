@@ -1453,7 +1453,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keepAlive: 0
   enemyPrefabs:
-  - {fileID: 6107703655791865057, guid: 89a4f7bde8f571245a69cfe330d6ff36, type: 3}
+  - {fileID: 7038974714219994185, guid: 7bebceabf9d92fc43ba5ce4e765574d8, type: 3}
+  - {fileID: 4293910069331524822, guid: f1832e77d0a27bf4ba1ccbda3e75ff17, type: 3}
+  - {fileID: 5649789501883666411, guid: 64f336b4914d3b744a7ea66bd92e1a3d, type: 3}
   timeBtwSpawn: 2.5
   spawnRange: 20
   planetMax: 10
