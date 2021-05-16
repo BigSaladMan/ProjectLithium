@@ -29,7 +29,6 @@ public class GameManager : Singleton<GameManager>, IDamageable
 
     private void Die()
     {
-        //TODO need to implement
         SceneManager.LoadScene("DeathScene");
     }
 

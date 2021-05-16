@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             Destroy(gameObject);
             AudioManager.instance.Play("explode");
-            GameManager.instance.health--;
+            GameManager.instance.TakeDamage();
         }    
     }
 
