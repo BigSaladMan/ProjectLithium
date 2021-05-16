@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Asteroid1
+  m_Name: Asteroid3
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,16 +20,16 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 9215188980084824494, guid: 9263849a7572975428fd46632abcf8b8,
+      value: {fileID: 1659188867657049296, guid: c5cb6bc70960896498d741f50c0b6cc8,
         type: 3}
     - time: 0.2
-      value: {fileID: 2641154658170846767, guid: 9263849a7572975428fd46632abcf8b8,
+      value: {fileID: 5803503258805513194, guid: c5cb6bc70960896498d741f50c0b6cc8,
         type: 3}
     - time: 0.4
-      value: {fileID: -555608576544717661, guid: 9263849a7572975428fd46632abcf8b8,
+      value: {fileID: -361646592106336255, guid: c5cb6bc70960896498d741f50c0b6cc8,
         type: 3}
     - time: 0.6
-      value: {fileID: 3405103990004216945, guid: 9263849a7572975428fd46632abcf8b8,
+      value: {fileID: -7469641232294471552, guid: c5cb6bc70960896498d741f50c0b6cc8,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -50,10 +50,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 9215188980084824494, guid: 9263849a7572975428fd46632abcf8b8, type: 3}
-    - {fileID: 2641154658170846767, guid: 9263849a7572975428fd46632abcf8b8, type: 3}
-    - {fileID: -555608576544717661, guid: 9263849a7572975428fd46632abcf8b8, type: 3}
-    - {fileID: 3405103990004216945, guid: 9263849a7572975428fd46632abcf8b8, type: 3}
+    - {fileID: 1659188867657049296, guid: c5cb6bc70960896498d741f50c0b6cc8, type: 3}
+    - {fileID: 5803503258805513194, guid: c5cb6bc70960896498d741f50c0b6cc8, type: 3}
+    - {fileID: -361646592106336255, guid: c5cb6bc70960896498d741f50c0b6cc8, type: 3}
+    - {fileID: -7469641232294471552, guid: c5cb6bc70960896498d741f50c0b6cc8, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

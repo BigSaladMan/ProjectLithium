@@ -34,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 21.217001, z: 0}
 --- !u!212 &7038974714219994229
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74,7 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fddf45c018a1ae048980057b6d9b0f82, type: 3}
+  m_Sprite: {fileID: 9215188980084824494, guid: 9263849a7572975428fd46632abcf8b8,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 7038974714219994185}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4b6c08d0331cc2d47af8376d3589a69f, type: 2}
+  m_Controller: {fileID: 9100000, guid: d0acfba85755252429e8f75ee9504574, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -130,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMin: 0
-  speedMax: 0
+  speedMax: 3
   health: 1
 --- !u!114 &-5587822768615532483
 MonoBehaviour:
