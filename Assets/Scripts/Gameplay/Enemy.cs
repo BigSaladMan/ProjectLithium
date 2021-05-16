@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private float speedMax = 5f;
     private float speed;
 
-    [SerializeField] private int health = 3; // TODO do we want 3 health on enemy
+    [SerializeField] private int health = 3;
 
     private Vector3 playerPos;
 
@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour, IDamageable
         if (health <= 0)
         {
             Destroy(gameObject);
+            GameManager.instance.score++;
             AudioManager.instance.Play("explode");
         }
     }

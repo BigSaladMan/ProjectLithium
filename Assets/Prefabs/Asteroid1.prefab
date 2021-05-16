@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMin: 0
-  speedMax: 3
+  speedMax: 0
   health: 1
 --- !u!114 &-5587822768615532483
 MonoBehaviour:
