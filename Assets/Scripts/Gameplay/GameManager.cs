@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zone.Core.Utils;
 
 public class GameManager : Singleton<GameManager>, IDamageable
@@ -19,6 +20,11 @@ public class GameManager : Singleton<GameManager>, IDamageable
     private void Die()
     {
         //TODO need to implement
-        // throw new NotImplementedException();
+        SceneManager.LoadScene("DeathScene");
+    }
+
+    public void ResetState()
+    {
+        health = 3;
     }
 }
