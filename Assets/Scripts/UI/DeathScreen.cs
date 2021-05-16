@@ -15,7 +15,7 @@ public class DeathScreen : MonoBehaviour
     public void ShowMain()
     {
         SceneManager.LoadScene("Menus");
-        Destroy(GameManager.instance);
+        //Destroy(GameManager.instance);
     }
 
 }
