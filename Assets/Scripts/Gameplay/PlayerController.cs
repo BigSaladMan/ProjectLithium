@@ -1,13 +1,10 @@
 ﻿using UnityEngine;
+using Zone.Core.Audio;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController: MonoBehaviour
 {
-
-
-    // [SerializeField] private readonly float shipAccel = 7f;
-    // [SerializeField] private readonly float maxSpeed = 20f;
-    [SerializeField] private readonly float rotationSpeed = 1.0f;
+    [SerializeField] private float rotationSpeed = 2.0f;
     private Rigidbody rb;
     private void Start()
     {
@@ -16,54 +13,26 @@ public class PlayerController: MonoBehaviour
         GameManager.instance.ResetState();
     }
 
+    private void Update() 
+    {
+        if (Input.GetKey(KeyCode.Space))
+            Shoot(transform.position, transform.forward);
+    }
+
     private void FixedUpdate()
     {
         Move();
-        // //capped speed
-        // rb.velocity = Vector3.ClampMagnitude(rb.velocity, 25f);
-        // // TODO might n eed more friction && might wanna move this somewhere else
-        //friction (20% of speed)
-        //rb.AddForce(-rb.velocity.x/2f, 0f, -rb.velocity.z/2f);
     }
 
     private void Move()
     {
         float x = Input.GetAxis("Horizontal"); 
-        // float y = Input.GetAxis("Vertical");
-
-        //CounterForce();
-
-        // no going back
-        // if (y < 0)
-            // return;
-
-        // float magnitude = rb.velocity.magnitude;
-
-        // clamping to max speed
-        // TODO make sure check if this works
-        // if (x != 0 && y != 0 && magnitude >= maxSpeed)
-            // return;
-
-        
-        // float multiplier = 1f;
-        // if (magnitude > 20f)
-            // multiplier = 2f;
-
-        //rb.AddForce(transform.forward * y * shipAccel * Time.deltaTime * multiplier);
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + (x * rotationSpeed), transform.rotation.eulerAngles.z);
     }
 
-    // private void CounterForce()
-    // {
-    //     //quick slowdown if almost stopped
-    //     if(rb.velocity.magnitude < 1f)
-    //     {
-    //         rb.AddForce(-rb.velocity.x, 0f, -rb.velocity.z);
-    //     }
-    // }
-
     public void Shoot(Vector3 shootPosition, Vector3 shootDirection)
     {
+        AudioManager.instance.Play("shoot");
         //hit
         if (Physics.Raycast(shootPosition, shootDirection, out RaycastHit hit))
         {

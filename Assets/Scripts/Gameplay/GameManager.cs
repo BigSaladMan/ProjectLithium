@@ -4,7 +4,7 @@ using Zone.Core.Utils;
 
 public class GameManager : Singleton<GameManager>, IDamageable
 {
-    private int health = 3;
+    public int health = 3;
 
 
 
